@@ -1,0 +1,135 @@
+#root {
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100dvh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  background-color: #e7e5e4;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a.active-menu {
+  color: #ef4444;
+}
+
+.container {
+  width: clamp(320px, 80%, 800px);
+  flex-grow: 1;
+  padding-top: 20px;
+}
+
+.container > * {
+  width: 100%;
+}
+
+.container .breadcrumbs {
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  gap: 5px;
+}
+
+.container .breadcrumbs > a:before {
+  content: "/";
+  margin-right: 5px;
+} 
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.posts-list .user-filter {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.posts-list .user-filter > * {
+  padding: 8px;
+  cursor: pointer;
+  border: 1px solid #e7e5e4;
+  border-radius: 4px;
+}
+
+.posts-list .posts-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  grid-auto-rows: minmax(40px, auto);
+}
+
+.posts-list .posts-container > a {
+  border: 1px solid #e7e5e4;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.posts-list > a:hover {
+  background-color: #e7e5e4;
+}
+
+.single-post-page {
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr 150px;
+  gap: 8px;;
+  grid-auto-rows: minmax(fit-content, auto);
+  justify-content: center;
+  padding: 10px;
+}
+
+.single-post-page .back-btn:before {
+  content: "<";
+  margin-right: 5px;
+}
+
+.single-post-page h3 {
+  grid-column: 2/-1;
+  text-align: right;
+  margin: 0;
+}
+
+.single-post-page p {
+  grid-column: 1/-1;
+  text-align: justify;
+}
+
+.single-post-page .btn {
+  grid-column: -2/-1;
+  grid-row: 3/4;
+}
+
+.single-post-page .comments-list {
+  grid-column: 1/-2;
+  grid-row-start: 3;
+}
+
+.single-post-page .comments-list > ol {
+  text-align: left;
+}
+
+footer {
+  width: 100%;
+  padding: 20px;
+}
